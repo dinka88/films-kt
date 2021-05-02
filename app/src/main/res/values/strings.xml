@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">My Application</string>
+    <string name="Enterfilms"> Enter the title of the movie</string>
+    <string name="search">Search</string>
 </resources>
