@@ -5,7 +5,7 @@
     android:id="@+id/fragment_movie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/back_fragment">
 
 
     <TextView
@@ -15,10 +15,10 @@
         android:layout_marginStart="15dp"
         android:layout_marginBottom="10dp"
         android:text="Avengers: End game"
-        android:textColor="#0C0000"
+        android:textColor="@color/color_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/descriptionMovie"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/poster" />
 
     <TextView
         android:id="@+id/yearMovie"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="2019"
-        android:textColor="#090000"
+        android:textColor="@color/color_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/nameMovie"
         app:layout_constraintStart_toEndOf="@+id/nameMovie" />
@@ -36,16 +36,16 @@
         android:layout_width="235dp"
         android:layout_height="127dp"
         android:text="After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
-        android:textColor="#0E0000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:textColor="@color/color_text"
+        app:layout_constraintBottom_toBottomOf="@+id/poster"
         app:layout_constraintStart_toStartOf="@+id/nameMovie" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/poster"
         android:layout_width="109dp"
         android:layout_height="153dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avengers_infinity_war_poster" />
