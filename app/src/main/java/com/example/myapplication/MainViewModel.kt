@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel(private val liveDataToObserver: MutableLiveData<Any> = MutableLiveData()): ViewModel() {
-    fun liveData (): LiveData<Any>{
+    fun geteData (): LiveData<Any>{
         return liveDataToObserver
     }
 }
