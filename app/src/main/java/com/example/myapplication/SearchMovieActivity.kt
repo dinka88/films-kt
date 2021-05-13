@@ -1,9 +1,11 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.SearchMovieActivityBinding
+import com.example.myapplication.model.MovieLoader
 
 class SearchMovieActivity : AppCompatActivity() {
 
@@ -19,6 +21,8 @@ class SearchMovieActivity : AppCompatActivity() {
         searchFragment.setArguments(intent.extras)
         supportFragmentManager.beginTransaction().replace(R.id.fragment_search, searchFragment).commit()
         viewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
+
+
     }
 
 

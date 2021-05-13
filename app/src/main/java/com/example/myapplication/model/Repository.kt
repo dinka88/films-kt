@@ -1,6 +1,9 @@
 package com.example.myapplication.model
 
 interface Repository {
-    fun getDataFromServer () : Movie
-    fun getDataFromLocalStorage(): Movie
+
+    fun find(query: String): MovieDTO?
+
+//    fun getDataFromServer () : Movie
+//    fun getDataFromLocalStorage(): Movie
 }
