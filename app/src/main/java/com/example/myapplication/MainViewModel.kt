@@ -1,21 +1,32 @@
 package com.example.myapplication
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.model.MovieDTO
-import com.example.myapplication.model.MovieRepository
-import com.example.myapplication.model.Repository
+import com.example.myapplication.model.rest.MovieRepository
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainViewModel(private val liveDataToObserver: MutableLiveData<MovieDTO> = MutableLiveData()): ViewModel() {
 
-    val movieRepository: Repository = MovieRepository()
+    private val callBack = object : Callback<MovieDTO> {
 
-    fun geteData (): LiveData<MovieDTO>{
-        Thread {
-            val dto = movieRepository.find("П") // TODO
-            liveDataToObserver.postValue(dto)
-        }.start()
+        override fun onResponse(call: Call<MovieDTO>, response: Response<MovieDTO>) {
+            val serverResponse: MovieDTO? = response.body()
+            liveDataToObserver.postValue(serverResponse!!)
+        }
+
+        override fun onFailure(call: Call<MovieDTO>, t: Throwable) {
+            t.printStackTrace()
+            Log.e("ERROR", "Not found")
+        }
+    }
+
+    fun getData(query: String): LiveData<MovieDTO>{
+        MovieRepository.loaderMovie(query, callBack)
         return liveDataToObserver
     }
 }
