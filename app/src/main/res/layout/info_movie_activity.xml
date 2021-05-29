@@ -60,4 +60,13 @@
         android:text="fantasy, action, drama, adventure"
         app:layout_constraintStart_toEndOf="@+id/poster"
         app:layout_constraintTop_toTopOf="@+id/poster" />
+
+    <Button
+        android:id="@+id/changeViewMark"
+        android:layout_width="59dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="24dp"
+        android:text="Mark Viewed"
+        app:layout_constraintBottom_toBottomOf="@+id/yearMovie"
+        app:layout_constraintStart_toEndOf="@+id/yearMovie" />
 </androidx.constraintlayout.widget.ConstraintLayout>
