@@ -1,11 +1,9 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databinding.SearchMovieActivityBinding
-import com.example.myapplication.model.MovieLoader
 
 class SearchMovieActivity : AppCompatActivity() {
 

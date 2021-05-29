@@ -18,7 +18,7 @@ class SearchResultsActivity : AppCompatActivity() {
         movieFragment.setArguments(intent.extras)
         supportFragmentManager.beginTransaction().replace(R.id.fragment_movie, movieFragment).commit()
         val searchFragment = SearchFragment()
-        searchFragment.setArguments(intent.extras)
+//        searchFragment.setArguments(intent.extras)
         supportFragmentManager.beginTransaction().replace(R.id.fragment_search, searchFragment).commit()
         viewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
     }

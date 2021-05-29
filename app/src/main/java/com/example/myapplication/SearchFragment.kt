@@ -18,8 +18,9 @@ class SearchFragment: Fragment() {
     val executor = Executors.newScheduledThreadPool(1)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding= SearchFragmentBinding.inflate(inflater,container, false)
+        binding = SearchFragmentBinding.inflate(inflater,container, false)
         return binding.root
+
 
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -30,11 +31,13 @@ class SearchFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonSearch.setOnClickListener({ view ->
-            view.showSnackBar(R.string.search)
-            executor.schedule({
+//            view.showSnackBar(R.string.search)
+//            executor.schedule({
                 val intent = Intent(view.context, SearchResultsActivity::class.java)
+                intent.putExtra("query", binding.inputSearch.text.toString())
                 startActivity(intent)
-            }, 1, TimeUnit.SECONDS)
+//            }, 1, TimeUnit.SECONDS)
+//           textSearch.toString()
         })
     }
 }

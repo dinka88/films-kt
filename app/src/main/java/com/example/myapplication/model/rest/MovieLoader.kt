@@ -1,7 +1,8 @@
-package com.example.myapplication.model
+package com.example.myapplication.model.rest
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.example.myapplication.model.MovieDTO
 import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.InputStreamReader
