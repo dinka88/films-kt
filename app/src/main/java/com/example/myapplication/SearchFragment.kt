@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.SearchFragmentBinding
-import com.example.myapplication.model.showSnackBar
 import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 
 class SearchFragment: Fragment() {
@@ -33,8 +32,11 @@ class SearchFragment: Fragment() {
         binding.buttonSearch.setOnClickListener({ view ->
 //            view.showSnackBar(R.string.search)
 //            executor.schedule({
-                val intent = Intent(view.context, SearchResultsActivity::class.java)
+            val adult = view.context.getSharedPreferences("SETTINGS", Context.MODE_PRIVATE).getBoolean("ADULT", true)
+
+            val intent = Intent(view.context, SearchResultsActivity::class.java)
                 intent.putExtra("query", binding.inputSearch.text.toString())
+                intent.putExtra("adult", adult)
                 startActivity(intent)
 //            }, 1, TimeUnit.SECONDS)
 //           textSearch.toString()

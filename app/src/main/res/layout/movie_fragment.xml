@@ -45,9 +45,17 @@
         android:layout_width="109dp"
         android:layout_height="153dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avengers_infinity_war_poster" />
 
+    <Button
+        android:id="@+id/changeViewMark"
+        android:layout_width="259dp"
+        android:layout_height="33dp"
+        android:text="Loading..."
+        app:layout_constraintBottom_toTopOf="@+id/poster"
+        app:layout_constraintStart_toStartOf="@+id/poster"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
