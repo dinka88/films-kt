@@ -13,7 +13,7 @@ class SearchResultsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= SearchResultsActivityBinding.inflate(layoutInflater)
+        binding = SearchResultsActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val movieFragment = MovieFragment()
         movieFragment.setArguments(intent.extras)
@@ -29,6 +29,11 @@ class SearchResultsActivity : AppCompatActivity() {
         binding.settings.setOnClickListener { view ->
             val intent = Intent(view.context, Settings2Activity::class.java)
             startActivity(intent)
+        }
+
+        binding.map.setOnClickListener { view ->
+            val fragment = MapsFragment.newInstance()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_movie, fragment).commit()
         }
     }
 }
