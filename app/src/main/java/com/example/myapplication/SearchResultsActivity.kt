@@ -35,5 +35,14 @@ class SearchResultsActivity : AppCompatActivity() {
             val fragment = MapsFragment.newInstance()
             supportFragmentManager.beginTransaction().replace(R.id.fragment_movie, fragment).commit()
         }
+
+        binding.contacts.setOnClickListener { view ->
+            val contacts = ContentProviderFragment.newInstance()
+            contacts.setArguments(intent.extras)
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_search, contacts)
+                    .addToBackStack("")
+                    .commitAllowingStateLoss()
+        }
     }
 }
