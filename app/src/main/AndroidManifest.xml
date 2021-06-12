@@ -5,6 +5,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+
+
 
     <application
         android:name=".MovieApplication"
@@ -39,6 +43,11 @@
                 <action android:name="android.intent.action.ACTION_BATTERY_CHANGED"/>
             </intent-filter>
         </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD4dWveraCjleCZQ9z_l1rODbADL9W2RAs" />
+
     </application>
 
 </manifest>
